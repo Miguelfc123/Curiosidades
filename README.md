@@ -81,28 +81,7 @@ PUT /api/questions/:id para editar uma pergunta.
 
 DELETE /api/questions/:id para excluir uma pergunta.
 
-📄 Estrutura de Diretórios
-bash
-Copiar
-Editar
-├── backend
-│   ├── models
-│   │   └── Question.js
-│   ├── routes
-│   │   └── questions.js
-│   ├── controllers
-│   │   └── questionController.js
-│   └── index.js
-├── frontend
-│   ├── public
-│   └── src
-│       ├── components
-│       ├── pages
-│       ├── services
-│       └── App.js
-├── .gitignore
-├── package.json
-└── README.md
+
 📌 Observações
 O banco de dados utilizado no projeto pode ser MongoDB, mas você pode trocar por MySQL ou SQLite conforme sua preferência.
 
