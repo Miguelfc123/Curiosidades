@@ -1,88 +1,92 @@
-Jogo de Perguntas - CRUD
-Este é um jogo de perguntas no estilo "Perguntados", onde os jogadores escolhem um tema e respondem a perguntas relacionadas. Todos os jogadores têm a permissão para editar ou excluir perguntas, sem a necessidade de um administrador. O sistema permite uma personalização contínua, com perguntas atualizadas pela própria comunidade de jogadores.
+🧠 Jogo de Curiosidades - CRUD
+Este projeto é um jogo de curiosidades no estilo interativo, onde os jogadores escolhem um tema e recebem curiosidades relacionadas. Diferente de jogos tradicionais de perguntas e respostas, não há alternativas nem pontuação — o objetivo é explorar e aprender de forma leve e divertida.
 
-🛠 Tecnologias Usadas
-Frontend: React
+Todos os jogadores podem adicionar, editar ou excluir curiosidades, criando um ambiente colaborativo de conhecimento. Não existe um administrador: o conteúdo é gerenciado pela própria comunidade.
 
-Backend: Node.js, Express
+🛠 Tecnologias Utilizadas
+Frontend: React.js
 
-Banco de Dados: MongoDB (ou qualquer banco que você escolher)
+Backend: Node.js + Express
 
-Autenticação: (se houver) JWT, ou sessão de usuário simples
+Banco de Dados: MongoDB
 
-Ferramentas de Desenvolvimento: Postman, Nodemon, React Developer Tools
+Ambiente de Desenvolvimento: IntelliJ, Docker e Postman
 
 ⚙️ Funcionalidades
-1. Escolha de Tema
-O jogador pode escolher um tema entre várias opções, como Geografia, História, Esportes, etc.
+Escolha de Tema
+Os jogadores escolhem um tema como História, Tecnologia, Natureza, entre outros.
 
-2. Respostas às Perguntas
-Uma vez que o tema é escolhido, o jogador pode responder a perguntas relacionadas a esse tema. As perguntas são retiradas da base de dados e exibidas de maneira aleatória.
+Exibição de Curiosidades
+Após escolher um tema, são exibidas curiosidades associadas, vindas diretamente do banco de dados.
 
-3. Edição e Exclusão de Perguntas
-Qualquer jogador pode editar ou excluir perguntas. Não há um administrador para gerenciar as perguntas, e todos podem contribuir para melhorar o conteúdo do jogo.
+CRUD de Curiosidades
+Todos os jogadores podem criar novas curiosidades, editar ou excluir as existentes.
 
-4. Página de Edição
-Existe uma página onde o jogador pode editar ou excluir perguntas existentes, podendo modificar texto, adicionar novas alternativas ou mudar o tema de uma pergunta.
+Edição Aberta e Colaborativa
+Não há login obrigatório nem permissões especiais: qualquer usuário pode modificar o conteúdo.
 
-5. API CRUD
-A aplicação se comunica com uma API backend (Node.js/Express) para realizar as operações CRUD (Create, Read, Update, Delete) nas perguntas e temas.
+API RESTful
+A aplicação se comunica com uma API construída com Express para realizar todas as operações de criação, leitura, atualização e exclusão.
 
-🧑‍💻 Como Rodar o Projeto
-1. Clonar o Repositório
-Clone o repositório para sua máquina local:
-
+🚀 Como Rodar o Projeto
+1. Clone o repositório
 bash
 Copiar
 Editar
 git clone https://github.com/seu-usuario/nome-do-repositorio.git
 cd nome-do-repositorio
-2. Instalar Dependências
-No diretório do projeto, instale as dependências necessárias para o frontend e backend.
+2. Instale as dependências
+Frontend:
 
-Para o frontend:
 bash
 Copiar
 Editar
 cd frontend
 npm install
-Para o backend:
+Backend:
+
 bash
 Copiar
 Editar
 cd backend
 npm install
-3. Iniciar o Servidor Backend
-Dentro da pasta backend, inicie o servidor Express:
+3. Configure o ambiente
+Certifique-se de que o MongoDB esteja rodando localmente ou via Docker. Exemplo com Docker:
 
 bash
 Copiar
 Editar
+docker run --name curiosidades-mongo -p 27017:27017 -d mongo
+4. Inicie os servidores
+Backend (com Nodemon):
+
+bash
+Copiar
+Editar
+cd backend
 npm run dev
-Isso iniciará o servidor com Nodemon para detectar alterações no código e reiniciar automaticamente.
-
-4. Iniciar o Frontend
-Dentro da pasta frontend, inicie o React:
+Frontend:
 
 bash
 Copiar
 Editar
+cd frontend
 npm start
-A aplicação estará disponível em http://localhost:3000.
+A aplicação estará disponível em: http://localhost:3000
 
-5. Testar API
-Use ferramentas como Postman ou Insomnia para testar as rotas da API do backend, como:
+🔌 Endpoints da API
+GET /api/curiosidades – Lista todas as curiosidades
 
-GET /api/questions para listar as perguntas.
+POST /api/curiosidades – Cria uma nova curiosidade
 
-POST /api/questions para adicionar uma nova pergunta.
+PUT /api/curiosidades/:id – Edita uma curiosidade existente
 
-PUT /api/questions/:id para editar uma pergunta.
-
-DELETE /api/questions/:id para excluir uma pergunta.
-
+DELETE /api/curiosidades/:id – Exclui uma curiosidade
 
 📌 Observações
-O banco de dados utilizado no projeto pode ser MongoDB, mas você pode trocar por MySQL ou SQLite conforme sua preferência.
+O projeto usa MongoDB, mas pode ser adaptado para outros bancos como MySQL ou SQLite.
 
-O projeto permite atualizações em tempo real de perguntas, e as alterações podem ser vistas por todos os jogadores imediatamente após o envio de uma atualização.
+Todas as alterações feitas nas curiosidades são atualizadas em tempo real para todos os usuários.
+
+Este projeto é ideal para aprender conceitos de CRUD, colaboração aberta e integração entre frontend e backend.
+
